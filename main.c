@@ -33,7 +33,48 @@ int main(int argc, char** argv)
     eps_setRealtimeClockToNow();
     eps_setLoadControllingMode( 0 );
     eps_forceLoadOn();
+    
+    uint16_t     batteryStatusBits = eps_getBatteryStatusBits();
+    Logger_LogInfo( "Battery Status Bits: battery status voltage: %s\n", getBatteryStatusVoltage( batteryStatusBits ));
+    Logger_LogInfo( "Battery Status Bits: battery status temperature: %s\n", getBatteryStatusTemperature( batteryStatusBits ));
+    Logger_LogInfo( "Battery Status Bits: battery status inner resistance: %s\n", getBatteryStatusInnerResistance( batteryStatusBits ));
+    Logger_LogInfo( "Battery Status Bits: battery status identification: %s\n", getBatteryStatusIdentification( batteryStatusBits ));
+    
+    uint16_t  chargingStatusBits   = eps_getChargingEquipmentStatusBits();
+    Logger_LogInfo( "Charging Status Bits: charging input voltage: %s\n", getChargingEquipmentStatusInputVoltageStatus( chargingStatusBits ));
+    Logger_LogInfo( "Charging Status Bits: charging MOSFET shorted: %s\n", (isChargingMOSFETShorted( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Charging Status Bits: charging MOSFET open: %s\n", (isChargingMOSFETOpen( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Charging Status Bits: anti reverse MOSFET shorted: %s\n", (isAntiReverseMOSFETShort( chargingStatusBits ) ? "Yes" : "No" ));
+    
+    Logger_LogInfo( "Charging Status Bits: input over current: %s\n", (isInputOverCurrent( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Charging Status Bits: load over current: %s\n", (isLoadOverCurrent( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Charging Status Bits: load shorted: %s\n", (isLoadShorted( chargingStatusBits ) ? "Yes" : "No" ));
+    
+    Logger_LogInfo( "Charging Status Bits: load MOSFET shorted: %s\n", (isLoadMOSFETShorted( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Charging Status Bits: disequilibrium in three: %s\n", (isDisequilibriumInThreeCircuits( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Charging Status Bits: PV input shorted: %s\n", (isPVInputShorted( chargingStatusBits ) ? "Yes" : "No" ));
 
+    Logger_LogInfo( "Charging Status Bits: charging status: %s\n", getChargingStatus( chargingStatusBits ));
+    Logger_LogInfo( "Charging Status Bits: charging status normal: %s\n", (isChargingStatusNormal( chargingStatusBits ) ? "Normal" : "Fault" ));
+    Logger_LogInfo( "Charging Status Bits: charging status running: %s\n", (isChargingStatusRunning( chargingStatusBits ) ? "Running" : "Standby" ));
+
+            
+    uint16_t  dischargingStatusBits   = eps_getdisChargingEquipmentStatusBits();
+    Logger_LogInfo( "Discharging Status Bits: discharging status: %s\n", getDischargingStatusInputVoltageStatus( chargingStatusBits ));
+    Logger_LogInfo( "Discharging Status Bits: discharging power: %s\n", getDischargingStatusOutputPower( chargingStatusBits ));
+    Logger_LogInfo( "Discharging Status Bits: discharging shorted: %s\n", (isdischargeStatusShorted( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Discharging Status Bits: unable to discharging: %s\n", (isdischargeStatusUnableToDischarge( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Discharging Status Bits: unable to stop discharge: %s\n", (isdischargeStatusUnableToStopDischarge( chargingStatusBits ) ? "Yes" : "No" ));
+
+    Logger_LogInfo( "Discharging Status Bits: output voltage abnormal: %s\n", (isdischargeStatusOutputVoltageAbnormal( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Discharging Status Bits: input over voltage: %s\n", (isdischargeStatusInputOverVoltage( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Discharging Status Bits: short in high voltage: %s\n", (isdischargeStatusShortedInHighVoltage( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Discharging Status Bits: boost over voltage: %s\n", (isdischargeStatusBoostOverVoltage( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Discharging Status Bits: output over voltage: %s\n", (isdischargeStatusOutputOverVoltage( chargingStatusBits ) ? "Yes" : "No" ));
+    Logger_LogInfo( "Discharging Status Bits: load status: %s\n", (isdischargeStatusNormal( chargingStatusBits ) ? "Normal" : "Fault" ));
+    Logger_LogInfo( "Discharging Status Bits: load running: %s\n", (isdischargeStatusRunning( chargingStatusBits ) ? "Running" : "Standby" ));
+    
+    
     
     float   batteryVoltage = eps_getBatteryVoltage();
     Logger_LogWarning( "Battery Voltage: %f\n", batteryVoltage );
