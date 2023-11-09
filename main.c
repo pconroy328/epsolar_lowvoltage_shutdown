@@ -32,6 +32,7 @@ int main(int argc, char** argv)
     Logger_LogInfo( "Setting controller clock to 'now' and Load Control to Manual\n" );
     eps_setRealtimeClockToNow();
     eps_setLoadControllingMode( 0 );
+    eps_forceLoadOn();
 
     
     float   batteryVoltage = eps_getBatteryVoltage();

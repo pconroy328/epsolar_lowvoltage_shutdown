@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=epsolar_lowbattery_shutdown
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/epsolar_lowbattery_shutdown
+CND_ARTIFACT_NAME_Debug=epsolar_lowvoltage_shutdown
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/epsolar_lowvoltage_shutdown
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=epsolarlowbatteryshutdown.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/epsolarlowbatteryshutdown.tar
+CND_PACKAGE_NAME_Debug=epsolarlowvoltageshutdown.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/epsolarlowvoltageshutdown.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=epsolar_lowbattery_shutdown
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/epsolar_lowbattery_shutdown
+CND_ARTIFACT_NAME_Release=epsolar_lowvoltage_shutdown
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/epsolar_lowvoltage_shutdown
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=epsolarlowbatteryshutdown.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/epsolarlowbatteryshutdown.tar
+CND_PACKAGE_NAME_Release=epsolarlowvoltageshutdown.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/epsolarlowvoltageshutdown.tar
 #
 # include compiler specific variables
 #

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=epsolar_lowbattery_shutdown
+PROJECTNAME=epsolar_lowvoltage_shutdown
 
 # Active Configuration
 DEFAULTCONF=Debug

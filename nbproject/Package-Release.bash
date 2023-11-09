@@ -13,9 +13,9 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=so
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/epsolar_lowbattery_shutdown
-OUTPUT_BASENAME=epsolar_lowbattery_shutdown
-PACKAGE_TOP_DIR=epsolarlowbatteryshutdown/
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/epsolar_lowvoltage_shutdown
+OUTPUT_BASENAME=epsolar_lowvoltage_shutdown
+PACKAGE_TOP_DIR=epsolarlowvoltageshutdown/
 
 # Functions
 function checkReturnCode
@@ -60,15 +60,15 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/epsolarlowbatteryshutdown/bin"
+makeDirectory "${NBTMPDIR}/epsolarlowvoltageshutdown/bin"
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/epsolarlowbatteryshutdown.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/epsolarlowvoltageshutdown.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/epsolarlowbatteryshutdown.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/epsolarlowvoltageshutdown.tar *
 checkReturnCode
 
 # Cleanup
